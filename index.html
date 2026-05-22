@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos</title>
+    <style>   
+            #overlay{
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.8);
+                display: none;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+            #overlay img{
+                max-width: 90%;
+                max-height: 90%;
+            }
+        </style>
+</head>
+<body>
+    <h1> My Photos <br> <hr> <small> Welcome to my collection</small> </hr>
+    </h1>
+        <style>
+            h1 {
+                color: blue;
+                text-align: center;
+                padding: 20px;
+                background-color: rgb(164, 120, 120);
+                width: fit-content;
+                margin: 0 auto;
+            }
+        </style>
+    <h2>
+        <hr> In this website, I store my Clicks </hr>
+
+    </h2>
+        <style>
+            h2 {
+                color: rgb(78, 94, 216);
+                text-align: center;
+                padding: 20px;
+                background-color: rgb(255, 253, 253);
+                width: fit-content;
+                margin: 0 auto;
+            }
+        </style>
+    <p>
+        <small>(click on the image to open and close it) <br>
+         (use arrow key to change images in full screen)</small>
+    </p>
+    <nav>
+        <p>my social accounts here</p>
+        <a href="https://www.facebook.com/ts.siam.5" target="_blank">Facebook</a>
+        <a href="https://github.com/tahzinsiam-cmd" target="_blank">GitHub</a>
+        <a href="https://replit.com/@tahzinsiam/Python" target="_blank">Replit</a>
+        <a href="https://www.instagram.com/ts.siam.5?igsh=Nzlzb3NhNDd5YXpm" target="_blank">Instagram</a>
+        <style>
+            nav{
+                margin-top: auto;
+                text-align: right;
+            }
+            a{
+                color: rgb(235, 16, 93);
+                background-color: blanchedalmond;
+            }
+        </style>
+    </nav>
+    <div class="image-container">
+        <img src="AA.jpeg" alt="Landscape" height="200" width="400" onclick="openimg(this)">
+        <img src="AB.jpeg" alt="Landscape" height="200" width="400" onclick="openimg(this)">
+        <img src="AH.jpeg" alt="Landscape" height="200" width="400" onclick="openimg(this)">
+        <br>
+        <img src="AC.jpeg" alt="Landscape" height="200" width="400" onclick="openimg(this)">
+        <img src="AE.jpeg" alt="Landscape" height="200" width="400" onclick="openimg(this)">
+        <img src="AI.jpeg" alt="Landscape" height="200" width="400" onclick="openimg(this)">
+        <br>
+        <img src="AF.jpeg" alt="Landscape" height="200" width="400" onclick="openimg(this)">
+        <img src="AG.jpeg" alt="Landscape" height="200" width="400" onclick="openimg(this)">
+        <img src="AJ.jpeg" alt="Landscape" height="200" width="400" onclick="openimg(this)">
+        <br>
+        <img src="AD.jpeg" alt="Landscape" height="400" width="400" onclick="openimg(this)">
+    
+        <style>
+            img {
+            
+                border: 3px solid black;
+                cursor: pointer;
+                
+            }
+        </style>
+        <style>
+            image-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+        </style>
+    </div>
+
+    <div id ="overlay" onclick="closeimg()">
+        <img id="fullimg">
+         
+        <script>
+            let images =[]
+            let currentIndex = 0;
+
+            document.querySelectorAll("img[onclick]").forEach((img, index) => {
+                images.push(img.src);
+                
+                });
+            
+            function openimg(img){
+                currentIndex = images.indexOf(img.src);
+                document.getElementById("fullimg").src = img.src;
+                document.getElementById("overlay").style.display = "flex";
+            }
+            function closeimg(){
+                document.getElementById("overlay").style.display = "none";
+            }
+            document.addEventListener("keydown", function(event){
+                if(event.key === "ArrowRight"){
+                    currentIndex = (currentIndex + 1) % images.length;
+                    document.getElementById("fullimg").src = images[currentIndex];
+                } else if(event.key === "ArrowLeft"){
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    document.getElementById("fullimg").src = images[currentIndex];
+                }
+            });
+        </script>
+        
+    </div>
+ <footer>
+    <c>&copy; 2026 T.A. Siam .All rights reserved.</c>
+        <style>
+            c {
+                display: block;
+                text-align: center;
+                padding: 2px;
+                background-color: rgb(164, 120, 120);
+                color: white;
+                bottom: 0;
+            }
+        </style>
+ </footer>
+</body>
+</html>
