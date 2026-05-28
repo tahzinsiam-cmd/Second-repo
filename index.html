@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photos</title>
+    <title>MyPhotos</title>
     <style>
        
         .container{
@@ -11,6 +11,7 @@
             position: relative;
             width: 400px;
             height: 400px;
+            margin: 50px auto;
         }
         .sun{
             position: absolute;
@@ -139,14 +140,13 @@
             }
         </style>
     <p>
-        <small>(click on the image to open and close it) <br>
-         (use arrow key to change images in full screen)</small>
+        (this website is made as just a hobby.)
     </p>
     <nav>
         <p>my social accounts here</p>
         <a href="https://www.facebook.com/ts.siam.5" target="_blank">Facebook</a>
         <a href="https://github.com/tahzinsiam-cmd" target="_blank">GitHub</a>
-        <a href="https://tahzinsiam-cmd.github.io/First-Repo/" target="_blank">Other</a>
+        <a href="https://replit.com/@tahzinsiam/Python" target="_blank">Replit</a>
         <a href="https://www.instagram.com/ts.siam.5?igsh=Nzlzb3NhNDd5YXpm" target="_blank">Instagram</a>
         <style>
             nav{
@@ -192,8 +192,23 @@
         </style>
     </div>
 
-    <div id ="overlay" onclick="closeimg()">
+    <div id ="overlay"style="display:none;" >
         <img id="fullimg">
+        <button onclick="closeimg()">Close</button>
+        <style>
+            button {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                background-color: #f70505;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        </style>
+
          
         <script>
             let images =[]
